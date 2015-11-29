@@ -13,7 +13,6 @@ public class App
     	int port = 8000;
     	if(args.length == 1)
     		port = Integer.parseInt(args[0]);
-    	System.out.println("Start");
         Endpoint.publish("http://localhost:" + port + "/services", new WSOC());
     }
 }
