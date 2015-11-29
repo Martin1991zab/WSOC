@@ -10,10 +10,10 @@ public class App
 {
     public static void main( String[] args ) throws Exception
     {
+    	int port = 8000;
+    	if(args.length == 1)
+    		port = Integer.parseInt(args[0]);
     	System.out.println("Start");
-        Endpoint ep = Endpoint.publish("http://localhost:8080/services", new WSOC());
-        //Thread.sleep(1000 * 30);
-        //ep.stop();
-        //System.out.println("Ende");
+        Endpoint.publish("http://localhost:" + port + "/services", new WSOC());
     }
 }
